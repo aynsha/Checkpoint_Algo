@@ -1,0 +1,44 @@
+ALGORITHM Premiere_tache
+VAR
+phrase: ARRAY_OF type[length];
+NbreMots, NbreVoyelles, i: INTEGER;
+caractere: STRING;
+BEGIN
+    Write("Entrez une phrase:");
+    Read(phrase);
+    NbreMots:=0;
+    NbreVoyelles:=0;
+    FOR i FROM 0 TO phrase.length-1 STEP 1  DO
+    caractere:=phrase[i];
+        IF (caractere = " ") THEN
+            NbreMots:= NbreMots+1;
+            ELSE_IF (caractere[i]="a"OU caractere[i]="e" OU caractere[i]="i" OU caractere[i]="o" OU caractere[i]="u" OU caractere="y") THEN
+                NbreVoyelles:=NbreVoyelles+1;
+        END_IF
+    END_FOR
+    Write("Le nombre de mots dans la phrase est de:", NbreMots+1);
+    Write("Le nombre de voyelles dans la phrase est de:", NbreVoyelles+1);
+END
+
+// Deuxieme_tache
+
+ALGORITHM Deuxieme_tache
+VAR
+elements: ARRAY_OF type[length];
+ensemble1, ensemble2, sum, result:INTEGER;
+BEGIN
+    ensemble1:= ARRAY_OF INTEGER[2, 4, 6, 1, 3];
+    ensemble2:= ARRAY_OF INTEGER[1, 7, 6, 2, 8];
+    sum:=0;
+    FOR sum FROM 0 TO ensemble1.length-1 STEP 1 DO
+    IF (ensemble1[sum] IN elements) AND (ensemble2[sum] IN elements) THEN
+    sum:= sum+1;
+    ELSE_IF(ensemble1[sum] IN elements) AND (ensemble2[sum] NOT IN elements) THEN
+    elements:=elements+[ensemble2[sum]];
+    ELSE_IF(ensemble1[sum] NOT IN elements) AND (ensemble2[sum]  IN elements) THEN
+   elements:=elements+[ensemble1[sum]]
+END_IF
+END_FOR
+Write("elements_dstncts de ensemble1:", result);
+Write("elements de ensemble2 :" result);
+END
