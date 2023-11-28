@@ -42,6 +42,6 @@ BEGIN
    sum:=sum+[ensemble1[i]]
 END_IF
 END_FOR
-Write("elements_dstncts de ensemble1:", result);
-Write("elements de ensemble2 :" result);
+Write("elements_dstncts de ensemble1:", sum);
+Write("elements de ensemble2 :" sum);
 END
